@@ -1,26 +1,31 @@
 import home from "./home";
 import about from "./about";
 import contact from "./contact";
+import './style.css';
 
 function navComponent(){
-    const div = document.createElement('div');
+    const navContainer = document.createElement('div');
     const homeBtn = document.createElement('button');
     const aboutBtn = document.createElement('button');
     const contactBtn = document.createElement('button');
+
+    navContainer.classList.add('nav-container');
 
     homeBtn.textContent = 'HOME';
     aboutBtn.textContent = 'ABOUT';
     contactBtn.textContent = 'CONTACT';
 
-    div.appendChild(homeBtn);
-    div.appendChild(aboutBtn);
-    div.appendChild(contactBtn);
+    navContainer.appendChild(homeBtn);
+    navContainer.appendChild(aboutBtn);
+    navContainer.appendChild(contactBtn);
+
+    bodyComp('home');
 
     homeBtn.addEventListener('click', ()=> bodyComp('home'));
     aboutBtn.addEventListener('click', ()=> bodyComp('about'));
     contactBtn.addEventListener('click', ()=> bodyComp('contact'));
 
-    return div;
+    return navContainer;
 }
 
 function bodyComp(content){
