@@ -1,7 +1,10 @@
+export default function home() {
+        const homeContainer = document.createElement('div');
+        
+        
+        homeContainer.classList.add('home-container');
+        homeContainer.textContent = 'THIS IS HOME';
 
-export default function home(){
-    const div = document.createElement('div');
-    div.textContent = 'THIS IS HOME';
-    
-    return div;
+
+        return homeContainer;
 }

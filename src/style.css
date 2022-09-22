@@ -1,4 +1,40 @@
+* {
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .nav-container {
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+button {
   padding: 10px;
-  background-color: red;
+  font-size: 1rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.0);
+  transition: transform ease 0.7s;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: translate(0, -10px);
+}
+
+#content {
+  flex: 1;
+  background-color: gray;
+}
+
+.home-container {
+  display: flex;
+  justify-content: center;
 }
