@@ -1,8 +1,18 @@
 
 export default function contact(){
-    const div = document.createElement('div');
+    const contactContainer = document.createElement('div');
+    const title = document.createElement('h1');
+    const content = document.createElement('p');
     
-    div.textContent = 'THIS IS CONTACT';
-    
-    return div;
+    contactContainer.classList.add('content-container');
+    title.classList.add('about-title');
+    content.classList.add('about-content');
+
+    title.textContent = 'Contact Us';
+    content.textContent = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores itaque amet totam! Beatae neque molestias eaque, nam perferendis incidunt sapiente id distinctio? Error explicabo voluptatem iure autem veritatis fuga, impedit in earum reiciendis illum, ipsam rem sed mollitia illo delectus cupiditate accusamus ipsa labore! Natus vitae eos quo in velit!';
+
+    contactContainer.appendChild(title);
+    contactContainer.appendChild(content);
+
+    return contactContainer;
 }

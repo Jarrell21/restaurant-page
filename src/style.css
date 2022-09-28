@@ -1,11 +1,17 @@
 * {
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background: url('./bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .nav-container {
@@ -13,14 +19,26 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
-  gap: 5rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nav-title {
+  color: white;
+  font-size: 3rem;
+}
+
+.nav-btns {
+  display: flex;
+  gap: 3rem;
 }
 
 button {
   padding: 10px;
   font-size: 1rem;
   border: none;
-  background-color: rgba(0, 0, 0, 0.0);
+  background-color: transparent;
   transition: transform ease 0.7s;
 }
 
@@ -30,11 +48,53 @@ button:hover {
 }
 
 #content {
-  flex: 1;
-  background-color: gray;
+  height: 100%;
+  
 }
 
-.home-container {
+.content-container {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  max-height: 100%;
+  padding: 2rem;
+  margin: 5rem auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.home {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  max-width: 700px;
+  max-height: 100%;
+  padding: 3rem;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home > p {
+  font-size: 1.5rem;
+}
+
+.home-img > img {
+  width: 20rem;
+  height: auto;
+  border-radius: 50%;
+}
+
+.about-title {
+  font-size: 3rem;
+}
+
+.about-content {
+  font-size: 1.5rem;
 }
