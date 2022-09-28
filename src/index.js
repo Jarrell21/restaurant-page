@@ -1,5 +1,5 @@
 import home from './home';
-import about from './about';
+import menu from './menu';
 import contact from './contact';
 import './style.css';
 
@@ -8,29 +8,29 @@ function navComponent() {
         const navTitle = document.createElement('div');
         const navBtns = document.createElement('div');
         const homeBtn = document.createElement('button');
-        const aboutBtn = document.createElement('button');
+        const menuBtn = document.createElement('button');
         const contactBtn = document.createElement('button');
 
         navContainer.classList.add('nav-container');
         navTitle.classList.add('nav-title');
         navBtns.classList.add('nav-btns');
         homeBtn.classList.add('homeBtn');
-        aboutBtn.classList.add('aboutBtn');
+        menuBtn.classList.add('menuBtn');
         contactBtn.classList.add('contactBtn');
 
         navTitle.textContent = 'Délicieux';
         homeBtn.textContent = 'HOME';
-        aboutBtn.textContent = 'ABOUT';
+        menuBtn.textContent = 'MENU';
         contactBtn.textContent = 'CONTACT';
 
         navContainer.appendChild(navTitle);
         navBtns.appendChild(homeBtn);
-        navBtns.appendChild(aboutBtn);
+        navBtns.appendChild(menuBtn);
         navBtns.appendChild(contactBtn);
         navContainer.appendChild(navBtns);
 
         homeBtn.addEventListener('click', () => {bodyComp('home')});
-        aboutBtn.addEventListener('click', () => bodyComp('about'));
+        menuBtn.addEventListener('click', () => bodyComp('menu'));
         contactBtn.addEventListener('click', () => bodyComp('contact'));
 
         return navContainer;
@@ -40,7 +40,7 @@ function bodyComp(content) {
         const body = document.querySelector('#content');
         const allBtns = document.querySelectorAll('button');
         const homeBtn = document.querySelector('.homeBtn');
-        const aboutBtn = document.querySelector('.aboutBtn');
+        const menuBtn = document.querySelector('.menuBtn');
         const contactBtn = document.querySelector('.contactBtn');
 
         allBtns.forEach((btn) => {
@@ -52,9 +52,9 @@ function bodyComp(content) {
         if (content === 'home') {
                 homeBtn.style.borderBottom = "2px solid white"
                 body.appendChild(home());
-        } else if (content === 'about') {
-                aboutBtn.style.borderBottom = "2px solid white"
-                body.appendChild(about());
+        } else if (content === 'menu') {
+                menuBtn.style.borderBottom = "2px solid white"
+                body.appendChild(menu());
         } else {
                 contactBtn.style.borderBottom = "2px solid white"
                 body.appendChild(contact());

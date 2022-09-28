@@ -7,7 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: url('./bg.jpg');
+  background: url('../dist/images/bg.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -49,21 +49,6 @@ button:hover {
 
 #content {
   height: 100%;
-  
-}
-
-.content-container {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  width: 60%;
-  max-height: 100%;
-  padding: 2rem;
-  margin: 5rem auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
 }
 
 .home {
@@ -91,10 +76,38 @@ button:hover {
   border-radius: 50%;
 }
 
-.about-title {
-  font-size: 3rem;
+.menu {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 700px;
+  height: max-content;
+  padding: 3rem;
+  margin: 5rem auto;
+  margin-bottom: 50px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto auto;
+  gap: 2rem;
 }
 
-.about-content {
-  font-size: 1.5rem;
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  transition: transform ease 0.7s;
+  border-radius: 100%;
 }
+
+.menu-item:hover {
+  background-color: rgba(99, 98, 98, 0.5);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.menu-item > img {
+  width: 250px;
+  height: 250px;
+}
+

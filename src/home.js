@@ -1,13 +1,11 @@
-import chefImg from './home.jpg';
-
 export default function home() {
         const homeContainer = document.createElement('div');
         const h1 = document.createElement('h1');
         const p1 = document.createElement('p');
         const imgContainer = document.createElement('div');
         const p2 = document.createElement('p');
-        const img = new Image();
-        img.src = chefImg;
+        const img = document.createElement('img');
+        img.src = `../dist/images/chef.jpg`;
         
         homeContainer.classList.add('home');
         h1.classList.add('home-title');
