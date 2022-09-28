@@ -1,10 +1,11 @@
+import chef from './images/chef.jpg';
 function createHome() {
         const homeContainer = document.createElement('div');
         homeContainer.classList.add('home');
 
         const imgContainer = document.createElement('div');
         const img = document.createElement('img');
-        img.src = `../dist/images/chef.jpg`;
+        img.src = chef;
         
         
         imgContainer.classList.add('home-img');
