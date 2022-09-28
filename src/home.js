@@ -42,4 +42,4 @@ function loadHome() {
         main.appendChild(createHome());
 }
 
-export default loadHome;
+export {loadHome, createParagraph};

@@ -1,4 +1,4 @@
-import loadHome from './home';
+import {loadHome} from './home';
 import loadMenu from './menu';
 import loadContact from './contact';
 import './style.css';
@@ -73,11 +73,6 @@ function createBody(){
 function createFooter(){
         const footer = document.createElement('footer');
         footer.classList.add('footer');
-
-        const copyright = document.createElement("p");
-        copyright.textContent = `Copyright © ${new Date().getFullYear()} `;
-        
-        footer.appendChild(copyright);
 
         return footer;
 }

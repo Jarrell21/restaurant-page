@@ -64,7 +64,7 @@ button:hover {
   max-width: 700px;
   max-height: 100%;
   padding: 3rem;
-  margin: 5rem auto;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -89,7 +89,6 @@ button:hover {
   height: max-content;
   padding: 3rem;
   margin: 5rem auto;
-  margin-bottom: 50px;
   display: grid;
   justify-content: center;
   grid-template-columns: auto auto;
@@ -115,6 +114,23 @@ button:hover {
 .menu-item > img {
   width: 250px;
   height: 250px;
+}
+
+.contact {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 700px;
+  height: max-content;
+  padding: 3rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact > p {
+  font-size: 1.5rem;
 }
 
 footer {
