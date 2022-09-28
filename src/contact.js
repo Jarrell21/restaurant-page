@@ -1,5 +1,5 @@
 
-export default function contact(){
+function createContact(){
     const contactContainer = document.createElement('div');
     const title = document.createElement('h1');
     const content = document.createElement('p');
@@ -16,3 +16,12 @@ export default function contact(){
 
     return contactContainer;
 }
+
+function loadContact(){
+    const main = document.querySelector('#main');
+
+    main.textContent = '';
+    main.appendChild(createContact());
+}
+
+export default loadContact;

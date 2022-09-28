@@ -1,66 +1,96 @@
-import home from './home';
-import menu from './menu';
-import contact from './contact';
+import loadHome from './home';
+import loadMenu from './menu';
+import loadContact from './contact';
 import './style.css';
 
-function navComponent() {
-        const navContainer = document.createElement('div');
-        const navTitle = document.createElement('div');
-        const navBtns = document.createElement('div');
-        const homeBtn = document.createElement('button');
-        const menuBtn = document.createElement('button');
-        const contactBtn = document.createElement('button');
+function createHeader() {
+        const header = document.createElement('header');
+        header.classList.add('header');
 
-        navContainer.classList.add('nav-container');
-        navTitle.classList.add('nav-title');
-        navBtns.classList.add('nav-btns');
-        homeBtn.classList.add('homeBtn');
-        menuBtn.classList.add('menuBtn');
-        contactBtn.classList.add('contactBtn');
+        const headerTitle = document.createElement('div');
+        headerTitle.classList.add('header-title');
 
-        navTitle.textContent = 'Délicieux';
-        homeBtn.textContent = 'HOME';
-        menuBtn.textContent = 'MENU';
-        contactBtn.textContent = 'CONTACT';
+        headerTitle.textContent = 'Délicieux';
 
-        navContainer.appendChild(navTitle);
-        navBtns.appendChild(homeBtn);
-        navBtns.appendChild(menuBtn);
-        navBtns.appendChild(contactBtn);
-        navContainer.appendChild(navBtns);
+        header.appendChild(headerTitle);
+        header.appendChild(createNav());
 
-        homeBtn.addEventListener('click', () => {bodyComp('home')});
-        menuBtn.addEventListener('click', () => bodyComp('menu'));
-        contactBtn.addEventListener('click', () => bodyComp('contact'));
-
-        return navContainer;
+        return header;
 }
 
-function bodyComp(content) {
-        const body = document.querySelector('#content');
-        const allBtns = document.querySelectorAll('button');
-        const homeBtn = document.querySelector('.homeBtn');
-        const menuBtn = document.querySelector('.menuBtn');
-        const contactBtn = document.querySelector('.contactBtn');
+function createNav(){
+        const nav = document.createElement('nav');
+        nav.classList.add('nav-btns');
 
-        allBtns.forEach((btn) => {
-                btn.style.color = 'white';
-                btn.style.borderBottom = null;
+        const homeBtn = document.createElement('button');
+        homeBtn.textContent = 'HOME';
+        homeBtn.classList.add('homeBtn');
+        homeBtn.addEventListener('click', () => {
+                loadHome();
+                setActiveBtn('home');
         })
 
-        if (body.lastChild) body.removeChild(body.lastChild);
-        if (content === 'home') {
-                homeBtn.style.borderBottom = "2px solid white"
-                body.appendChild(home());
-        } else if (content === 'menu') {
-                menuBtn.style.borderBottom = "2px solid white"
-                body.appendChild(menu());
-        } else {
-                contactBtn.style.borderBottom = "2px solid white"
-                body.appendChild(contact());
-        }
+        const menuBtn = document.createElement('button');
+        menuBtn.textContent = 'MENU';
+        menuBtn.classList.add('menuBtn');
+        menuBtn.addEventListener('click', () => {
+                loadMenu();
+                setActiveBtn('menu')
+        })
 
+        const contactBtn = document.createElement('button');
+        contactBtn.textContent = 'CONTACT';
+        contactBtn.classList.add('contactBtn');
+        contactBtn.addEventListener('click', () => {
+                loadContact();
+                setActiveBtn('contact');
+        })
+
+        nav.appendChild(homeBtn);
+        nav.appendChild(menuBtn);
+        nav.appendChild(contactBtn);
+
+        return nav;
 }
 
-document.body.prepend(navComponent());
-bodyComp('home');
+function setActiveBtn(btnName){
+        const allBtn = document.querySelectorAll('button');
+        const btn =  document.querySelector(`.${btnName}Btn`);
+
+        allBtn.forEach(btn => {
+                btn.classList.remove('active-btn');
+        })
+        btn.classList.add('active-btn');
+}
+
+function createBody(){
+        const main = document.createElement('main');
+        main.setAttribute('id', 'main');
+
+        return main;
+}
+
+function createFooter(){
+        const footer = document.createElement('footer');
+        footer.classList.add('footer');
+
+        const copyright = document.createElement("p");
+        copyright.textContent = `Copyright © ${new Date().getFullYear()} `;
+        
+        footer.appendChild(copyright);
+
+        return footer;
+}
+
+function initialize(){
+        const content = document.getElementById('content');
+
+        content.appendChild(createHeader());
+        content.appendChild(createBody());
+        content.appendChild(createFooter());
+
+        setActiveBtn('home');
+        loadHome();
+}
+
+initialize();

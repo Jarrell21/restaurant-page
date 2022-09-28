@@ -19,7 +19,7 @@ function createHome() {
 
         homeContainer.appendChild(imgContainer);
         imgContainer.appendChild(img);
-        
+
         homeContainer.appendChild(
                 createParagraph('Order now or visit us')
         );
@@ -35,4 +35,11 @@ function createParagraph(text){
         return para;
 }
 
-export default createHome;
+function loadHome() {
+        const main = document.querySelector('#main');
+
+        main.textContent = '';
+        main.appendChild(createHome());
+}
+
+export default loadHome;

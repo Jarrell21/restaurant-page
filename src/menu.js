@@ -56,10 +56,10 @@ function createMenuItem(name){
 }
 
 function loadMenu() {
-    const main = document.querySelector('#content');
+    const main = document.querySelector('#main');
 
     main.textContent = '';
-    // main.appendChild(createMenu());
+    main.appendChild(createMenu());
 }
 
-export default createMenu;
+export default loadMenu;
