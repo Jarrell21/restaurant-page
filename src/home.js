@@ -1,26 +1,38 @@
-export default function home() {
+function createHome() {
         const homeContainer = document.createElement('div');
-        const h1 = document.createElement('h1');
-        const p1 = document.createElement('p');
+        homeContainer.classList.add('home');
+
         const imgContainer = document.createElement('div');
-        const p2 = document.createElement('p');
         const img = document.createElement('img');
         img.src = `../dist/images/chef.jpg`;
         
-        homeContainer.classList.add('home');
-        h1.classList.add('home-title');
+        
         imgContainer.classList.add('home-img');
 
-        h1.textContent = 'Best pizza in town';
-        p1.textContent = 'Made with love since 2000';
-        p2.textContent = 'Order now or visit us';
-        
-        homeContainer.appendChild(h1);
-        homeContainer.appendChild(p1);
+        homeContainer.appendChild(
+                createParagraph('Best pizza in town')
+        );
+
+        homeContainer.appendChild(
+                createParagraph('Made with love since 2000')
+        );
+
         homeContainer.appendChild(imgContainer);
         imgContainer.appendChild(img);
-        homeContainer.appendChild(p2);
+        
+        homeContainer.appendChild(
+                createParagraph('Order now or visit us')
+        );
 
 
         return homeContainer;
 }
+
+function createParagraph(text){
+        const para = document.createElement('p');
+        para.textContent = text;
+
+        return para;
+}
+
+export default createHome;
