@@ -1,10 +1,11 @@
 import {createParagraph} from './home';
+import location from './images/location.jpg';
 function createContact(){
     const contactContainer = document.createElement('div');
     contactContainer.classList.add('contact');
 
     const locationImg = document.createElement('img');
-    locationImg.src = '../dist/images/location.jpg';
+    locationImg.src = location;
     locationImg.alt = 'Location';
 
     contactContainer.appendChild(

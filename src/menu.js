@@ -1,49 +1,58 @@
+import capricciosa from './images/pizzas/capricciosa.jpg';
+import hawaiian from './images/pizzas/hawaiian.jpg';
+import margherita from './images/pizzas/margherita.jpg';
+import marinara from './images/pizzas/marinara.jpg';
+import mexican from './images/pizzas/mexican.jpg';
+import mushroom from './images/pizzas/mushroom.jpg';
+import pepperoni from './images/pizzas/pepperoni.jpg';
+import seafood from './images/pizzas/seafood.jpg';
+
 function createMenu(){
     const menuContainer = document.createElement('div');
     
     menuContainer.classList.add('menu');
 
     menuContainer.appendChild(
-        createMenuItem('Capricciosa')
+        createMenuItem(capricciosa, 'Capricciosa')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Hawaiian')
+        createMenuItem(hawaiian, 'Hawaiian')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Margherita')
+        createMenuItem(margherita, 'Margherita')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Marinara')
+        createMenuItem(marinara, 'Marinara')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Mexican')
+        createMenuItem(mexican, 'Mexican')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Mushroom')
+        createMenuItem(mushroom, 'Mushroom')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Pepperoni')
+        createMenuItem(pepperoni, 'Pepperoni')
     );
 
     menuContainer.appendChild(
-        createMenuItem('Seafood')
+        createMenuItem(seafood, 'Seafood')
     );
 
     return menuContainer;
 }
 
-function createMenuItem(name){
+function createMenuItem(img, name){
     const menuItem = document.createElement('div');
     menuItem.classList.add('menu-item');
 
     const foodImg = document.createElement('img');
-    foodImg.src = `../dist/images/pizzas/${name.toLowerCase()}.jpg`;
+    foodImg.src = img;
     foodImg.alt = `${name}`;
 
     const foodName = document.createElement('h2');
